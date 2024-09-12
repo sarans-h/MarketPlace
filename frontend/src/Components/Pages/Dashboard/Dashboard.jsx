@@ -87,7 +87,7 @@ const Dashboard = () => {
         ],
       });
     }
-  }, [dispatch, orders]);
+  }, [dispatch]);
 
   let totalAmount = 0;
   orders && orders.forEach((item) => {
