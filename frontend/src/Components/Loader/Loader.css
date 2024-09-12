@@ -1,0 +1,41 @@
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:transparent; /* You can change this to match your theme */
+    font-weight: bold;
+}
+
+.loader svg path {
+    stroke: #000000; /* Initial stroke color */
+    stroke-width: 2px;
+    fill: none;
+    stroke-dasharray: 1000; /* Length of the path */
+    stroke-dashoffset: 1000; /* Initially hide the path */
+    animation: dash 4s ease-in-out infinite, color-change 4s ease-in-out infinite;
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 1000; /* Path is hidden */
+    }
+    50% {
+        stroke-dashoffset: 0; /* Path is fully drawn */
+    }
+    100% {
+        stroke-dashoffset: 1000; /* Path is hidden again (reverse) */
+    }
+}
+
+@keyframes color-change {
+    0% {
+        stroke: #000000;
+    }
+    50% {
+        stroke: #040404;
+    }
+    100% {
+        stroke: #000000;
+    }
+}
